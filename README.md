@@ -1,7 +1,7 @@
 # javascript_cours
 
 # events
-* [MDN intro events](https://developer.mozilla.org/fr/docs/Apprendre/ JavaScript/Building_blocks/Ev%C3%A8nements)
+* [MDN intro events](https://developer.mozilla.org/fr/docs/Apprendre/JavaScript/Building_blocks/Ev%C3%A8nements)
 * [MDN objet event](https://developer.mozilla.org/fr/docs/Web/API/Event)
 * [Event delegation](https://davidwalsh.name/event-delegate)
 
