@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Random color event object example</title>
+    <style>
+        button {
+            margin: 10px;
+            font-size: 300%;
+            padding: 30px;
+        }
+
+        ;
+    </style>
+</head>
+
+<body>
+    <button>Change color</button>
+    <script>
+        const btn = document.querySelector('button');
+
+        function random(number) {
+            return Math.floor(Math.random() * number);
+        }
+
+        function bgChange(e) {
+            const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+            e.target.style.backgroundColor = rndCol;
+            console.log(e);
+        }
+        // la console affiche :
+        // click { target: button,
+        //         buttons: 0,
+        //         clientX: 190,
+        //         clientY: 83,
+        //         layerX: 190,
+        //         layerY: 83 }
+
+        // La propriété target de l'objet événement est toujours une référence
+        // à l'élément sur lequel l'événement vient de se produire
+
+        btn.addEventListener('click', bgChange);
+    </script>
+</body>
+
+</html>

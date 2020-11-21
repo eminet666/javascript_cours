@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      button { margin: 10px };
+    </style>
+  </head>
+
+  <body>
+    <button onclick="bgChange()">change color</button>
+
+    <script>
+        var btn = document.querySelector('button');
+
+        function random(number) {
+          return Math.floor(Math.random()*number);
+        }
+
+        // fonction externe
+        function bgChange() {
+          var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+          document.body.style.backgroundColor = rndCol;
+        }
+
+        btn.addEventListener('click', bgChange);
+        btn.addEventListener('focus', bgChange);
+        btn.addEventListener('blur', bgChange);
+        btn.addEventListener('dblclick', bgChange);
+        btn.addEventListener('mouseover', bgChange);
+        btn.addEventListener('mouseout', bgChange);
+
+        // fonction interne (recommandé)
+        btn.addEventListener('click', function() {
+          var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+          document.body.style.backgroundColor = rndCol;
+        });
+
+        // possibilité de 2 fonctions
+        // btn.addEventListener('click', functionA);
+        // btn.addEventListener('click', functionB);
+
+        // possibilité de retirer un écouteur
+        // btn.removeEventListener('click', bgChange);
+
+    </script>
+  </body>
+</html>

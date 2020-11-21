@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script>
+            const gameStartEvent = new Event('fini')
+
+            document.addEventListener('fini', () => {
+                console.log(">>> success");
+                document.querySelector("#info").innerHTML = "temps écoulé !";
+            })
+
+            setTimeout(function() {
+                console.log(">>> started");
+                document.dispatchEvent(gameStartEvent);
+            }, 5000);
+        </script>
+
+    </head>
+
+    <body>
+
+        <p id="info">en attente</p>
+
+    </body>
+
+</html>
