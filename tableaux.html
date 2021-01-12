@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      button { margin: 10px };
+    </style>
+  </head>
+
+  <body>
+    <p id="resultat">résultat : </p>
+
+    <script>
+    // étape 1
+    var prenoms = ["pierre", "françois", "paul"];
+    // console.log(prenoms);
+    // document.getElementById("resultat").innerHTML = prenoms[0];
+    // console.log(prenoms.length);
+
+    prenoms = prenoms.sort();
+    for(var i = 0; i < prenoms.length; i++) {
+        document.getElementById("resultat").innerHTML +=
+        i + "-" +
+        prenoms[i] + " / ";
+    }
+
+
+
+
+
+    </script>
+  </body>
+</html>

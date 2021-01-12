@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+      <form>
+       <label for="tempF">entrez un température en fahrenheit :</label></br>
+       <input type="number" id="tempF" min="−459" max="1000">
+       <button type="button" id="bouton">ok</button>
+     </form>
+    <p id="resultat">la température en Celsius est : </p>
+
+    <script>
+    // version 1
+    // var tempF = 77
+    // var tempC = toCelsius(tempF);
+    // document.getElementById("resultat").innerHTML += tempC;
+    // function toCelsius(fahrenheit) {
+    // return (5/9)*(fahrenheit-32);
+    // }
+
+
+
+    // version 2
+    // var tempC, tempF;
+    // var inputF = document.getElementById("tempF");
+    //
+    // bouton.addEventListener('click', (event) => {
+    //     tempF = inputF.value;
+    //     tempC = toCelsius(tempF).toFixed(2);
+    //     document.getElementById("resultat").innerHTML += tempC;
+    // });
+    //
+    // function toCelsius(fahrenheit) {
+    // return (5/9)*(fahrenheit-32);
+    // }
+
+
+    </script>
+  </body>
+</html>

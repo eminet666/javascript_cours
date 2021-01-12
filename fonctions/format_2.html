@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+      <form>
+       <label for="tempF">entrez un température en fahrenheit :</label></br>
+       <input type="number" id="tempF" min="−459" max="1000">
+       <button type="button" id="bouton" onclick="getCelsius()">ok</button>
+     </form>
+    <p id="resultat">la température en Celsius est : </p>
+
+    <script>
+
+    function getCelsius() {
+        var tempF = document.getElementById("tempF").value;
+        var tempC = toCelsius(tempF).toFixed(2);
+        document.getElementById("resultat").innerHTML += tempC;
+    }
+
+    function toCelsius(fahrenheit) {
+        return (5/9)*(fahrenheit-32);
+    }
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <button onclick="getCurTime()" type="button">Get current time position</button>
+    <button onclick="setCurTime()" type="button">Set time position to 5 seconds</button><br>
+
+    <audio id="myAudio" controls>
+        <source src="zorba.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        var son = document.getElementById("myAudio");
+
+        function getCurTime() {
+            alert(son.currentTime);
+        }
+
+        function setCurTime() {
+            son.currentTime = 5;
+        }
+    </script>
+
+</body>
+
+</html>

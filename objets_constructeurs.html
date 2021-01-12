@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <p id="resultat">résultat : </p>
+
+    <script>
+        function Voiture (fabricant, modele, annee, proprietaire) {
+            this.fabricant = fabricant;
+            this.modele = modele;
+            this.annee = annee;
+            this.full = function() {
+                return this.fabricant + " "
+                + this.modele + " "
+                + this.annee;
+            }
+        }
+
+        var voiture1 = new Voiture("Mazda", "Miata", 1993);
+        var voiture2 = new Voiture("Audi", "A3", 2005);
+
+        // document.getElementById("resultat").innerHTML += voiture1.fabricant;
+        document.getElementById("resultat").innerHTML += voiture1.full();
+    </script>
+  </body>
+</html>

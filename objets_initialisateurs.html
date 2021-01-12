@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <p id="resultat">résultat : </p>
+
+    <script>
+        var myCar = {
+            fabricant : "Ford",
+            modele : "Mustang",
+            annee : 1969,
+            full : function() {
+                return this.fabricant + " "
+                + this.modele + " "
+                + this.annee;
+            }
+        }
+
+        // document.getElementById("resultat").innerHTML += myCar.fabricant;
+        document.getElementById("resultat").innerHTML += myCar.full();
+    </script>
+  </body>
+</html>
