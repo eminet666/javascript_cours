@@ -1,0 +1,92 @@
+<!-- https://www.w3schools.com/html/html5_canvas.asp -->
+<html>
+
+<head>
+    <style>
+    p { color: blue;}
+    canvas { border: 1px solid #000000;
+             /* width: 400px, height: 400px; */
+    }
+    input { width: 100px;}
+    </style>
+</head>
+
+<body>
+    <form>
+        <label for="annees">entrez le nombre d'années</label>
+        <input type="number" id="annees" min="1" max="100">
+        <label for="taux">le taux en %</label>
+        <input type="number" id="taux" min="0" max="20">
+        <button type="button" id="bouton" onclick="getInterets(100);">ok</button>
+    </form>
+    <p id="resultat">100€ valent maintenant : </p>
+    <canvas id="myCanvas" width="800" height="600"></canvas>
+
+    <script>
+        var resultat = document.getElementById("resultat");
+        var myCanvas = document.getElementById("myCanvas");
+        var ctx = myCanvas.getContext("2d");
+        ctx.font = "15px Arial";
+
+        function getInterets(somme) {
+            let annees = document.getElementById("annees");
+            let duree = annees.value;
+            let taux = document.getElementById("taux");
+            let pourcent = taux.value/100;
+            let couleur = get_random_color();
+            console.log(pourcent);
+            for(i = 0; i < duree; i++){
+                somme = somme*(1+pourcent);
+                drawInterest(i,somme,couleur);
+                // console.log(somme);
+            }
+            resultat.innerHTML = "100€ valent maintenant : "+somme.toFixed(2)+"€";
+        }
+
+        function drawInterest(x,valeur,couleur){
+            // DESSIN 1 : LIGNES
+            // ctx.moveTo(x, 400);
+            // ctx.lineTo(x, 400-valeur);
+            // ctx.stroke();
+
+            // DESSIN 2 : RECTANGLES
+            let l = 8;
+            ctx.fillStyle = couleur;
+            console.log(x+"_"+valeur);
+            ctx.fillRect(x*l, 600-valeur, l, valeur);
+
+            // LEGENDE
+            if(x == 0) {
+                ctx.save();
+                ctx.translate(15, 600-valeur-25);
+                ctx.fillStyle = "black";
+                ctx.rotate(-Math.PI/2);
+                ctx.textAlign = "center";
+                ctx.fillText("100€", 0, 0);
+                ctx.restore();
+            }
+        }
+
+        function get_random_color()
+        {
+          return '#' + parseInt(Math.random() * 0xffffff).toString(16);
+        }
+    </script>
+
+</body>
+
+</html>
+
+<!-- // for(var i = 0; i < 1000; i++){
+//     document.getElementById("resultat").innerHTML += "-"+i;
+// }
+//
+// for(var i = 0; i < 1000; i++){
+//     var resultat = document.getElementById("resultat");
+//     resultat.innerHTML += "-"+i;
+// }
+//
+// var resultat = document.getElementById("resultat");
+// for(var i = 0; i < 1000; i++){
+//     resultat.innerHTML += "-"+i;
+// } -->
