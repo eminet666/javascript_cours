@@ -1,0 +1,32 @@
+<!-- https://www.w3schools.com/js/js_api_fetch.asp -->
+<!-- en remplacement des XMLHttpRequest -->
+
+<!-- variante d'écriture : chainage des promesses -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <p id="demo">Fetch a file to change this text.</p>
+
+    <script>
+        let file = "1_infos.txt"
+
+        fetch(file)
+        .then(myObject => myObject.text())
+        .then(myText => document.getElementById("demo").innerHTML = myText);
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
